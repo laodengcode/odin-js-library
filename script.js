@@ -1,10 +1,14 @@
 const myLibrary = [];
 
 let harryPorter = new Book("Harry Porter", "JK", "this is an amazing magic book.this is an amazing magic book.this is an amazing magic book.", 0, 300, false);
+let peppa = new Book("Peppa", "Mesd", "Peppa pig and her family", 50, true);
+let money = new Book("Earn your money", "sdfs", "build your business at weekend", 32, false);
+let habits = new Book("Atomic Habbit", "sdasaa", "small habits great success", 30, true);
+
 myLibrary.push(harryPorter);
-myLibrary.push(harryPorter);
-myLibrary.push(harryPorter);
-myLibrary.push(harryPorter);
+myLibrary.push(peppa);
+myLibrary.push(money);
+myLibrary.push(habits);
 
 function Book(name, author, description, id, pageNumber, isRead) {
     this.name = name;
@@ -37,14 +41,21 @@ function displayLibrary() {
         const bookAuthor = document.createElement('p');
         bookAuthor.textContent = book.author;
         bookAuthor.className = 'author';
+        const status = document.createElement('p');
+        status.textContent = book.isRead ? "Finished" : "Unread";
+        status.className = 'status';
         const bookDescription = document.createElement('p');
+        bookDescription.className = 'description';
         bookDescription.textContent = book.description;
         const actions = document.createElement('div');
         actions.className = 'actions';
         const remove = document.createElement('button');
         remove.className = 'remove';
         remove.textContent = 'Delete';
-        actions.appendChild(remove);
+        const read = document.createElement('button');
+        read.className = 'read';
+        read.textContent = 'Finished';
+        actions.append(remove, read);
 
         remove.addEventListener('click', () => {
             const bookIndex = myLibrary.indexOf(book);
@@ -54,8 +65,13 @@ function displayLibrary() {
             }
         })
 
+        read.addEventListener('click', () => {
+            book.toggleReadStatus();
+            displayLibrary();
+        })
 
-        bookItem.append(bookName, bookAuthor, bookDescription, actions);
+
+        bookItem.append(bookName, bookAuthor, status, bookDescription, actions);
         bookList.appendChild(bookItem);
     })
 }
