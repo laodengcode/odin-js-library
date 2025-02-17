@@ -37,13 +37,52 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-size: 24px;
+}
+
+.author,
+.status {
+    margin: 0;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.status {
+    color: grey;
+}
+
+#openDialog,
+.remove,
+.read {
+    border: none;
+    border-radius: 4px;
+}
+
+.remove {
+    background-color: red;
+    color: white;
+}
+
+.read {
+    background-color: green;
+    color: white;
+}
+
+
 #openDialog {
     margin: 24px;
     width: 96px;
+    background-color: greenyellow;
+    color: white;
 }
 
 .actions {
     justify-content: end;
     align-self: flex-end;
     margin-top: auto;
+    display: flex;
+    gap: 8px;
 }

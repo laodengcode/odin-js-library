@@ -54,7 +54,7 @@ function displayLibrary() {
         remove.textContent = 'Delete';
         const read = document.createElement('button');
         read.className = 'read';
-        read.textContent = 'Finished';
+        read.textContent = 'Read';
         actions.append(remove, read);
 
         remove.addEventListener('click', () => {
