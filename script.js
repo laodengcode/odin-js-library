@@ -39,8 +39,23 @@ function displayLibrary() {
         bookAuthor.className = 'author';
         const bookDescription = document.createElement('p');
         bookDescription.textContent = book.description;
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+        const remove = document.createElement('button');
+        remove.className = 'remove';
+        remove.textContent = 'Delete';
+        actions.appendChild(remove);
 
-        bookItem.append(bookName, bookAuthor, bookDescription);
+        remove.addEventListener('click', () => {
+            const bookIndex = myLibrary.indexOf(book);
+            if (bookIndex > -1) {
+                myLibrary.splice(bookIndex, 1);
+                displayLibrary();
+            }
+        })
+
+
+        bookItem.append(bookName, bookAuthor, bookDescription, actions);
         bookList.appendChild(bookItem);
     })
 }
