@@ -10,8 +10,38 @@
 </head>
 
 <body>
-    <div class="container"></div>
+    <div class="library">
+        <h1>My Library</h1>
+        <button id="openDialog">Add Book</button>
+        <div class="container"></div>
 
+        <dialog id="addBook">
+            <form id="bookForm">
+                <p>
+                    <label for="name">Book Title</label>
+                    <input type="text" name="name" id="name">
+                </p>
+                <p>
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author">
+                </p>
+                <p>
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description">
+                </p>
+                <p>
+                    <label for="pages">pages</label>
+                    <input type="number" name="pages" id="pages">
+                </p>
+                <p>
+                    <input type="checkbox" name="isRead" id="isRead">
+                    <label for="isRead">I have read this book.</label>
+                </p>
+                <button type="submit">Add</button>
+                <button type="button" id="closeDialog">Cancel</button>
+            </form>
+        </dialog>
+    </div>
 </body>
 
 </html>

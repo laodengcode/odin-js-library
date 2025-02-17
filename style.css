@@ -23,3 +23,19 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 12px;
 }
+
+.library {
+    display: grid;
+    justify-items: center;
+
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+}
+
+#openDialog {
+    margin: 24px;
+    width: 96px;
+}
