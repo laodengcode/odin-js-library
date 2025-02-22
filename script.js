@@ -1,5 +1,19 @@
 const myLibrary = [];
 
+class Book {
+    constructor(name, author, description, id, pageNumber, isRead) {
+        this.name = name;
+        this.author = author;
+        this.description = description;
+        this.id = id;
+        this.pageNumber = pageNumber;
+        this.isRead = isRead;
+    }
+
+    toggleReadStatus() {
+        this.isRead = !this.isRead;
+    }
+}
 let harryPorter = new Book("Harry Porter", "JK", "this is an amazing magic book.this is an amazing magic book.this is an amazing magic book.", 0, 300, false);
 let peppa = new Book("Peppa", "Mesd", "Peppa pig and her family", 50, true);
 let money = new Book("Earn your money", "sdfs", "build your business at weekend", 32, false);
@@ -10,18 +24,8 @@ myLibrary.push(peppa);
 myLibrary.push(money);
 myLibrary.push(habits);
 
-function Book(name, author, description, id, pageNumber, isRead) {
-    this.name = name;
-    this.author = author;
-    this.description = description;
-    this.id = id;
-    this.pageNumber = pageNumber;
-    this.isRead = isRead;
-}
 
-Book.prototype.toggleReadStatus = function () {
-    this.isRead = !this.isRead;
-}
+
 
 function addBookToLibrary(name, author, description, pageNumber, isRead) {
     let id = myLibrary.length === 0 ? 0 : myLibrary[myLibrary.length - 1].id + 1;
